@@ -1,0 +1,6 @@
+{
+  "name": "Galaxy Watch Hero Section",
+  "description": "A high-fidelity recreation of the Samsung Galaxy Watch landing page hero section with pure CSS page-load entrance animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

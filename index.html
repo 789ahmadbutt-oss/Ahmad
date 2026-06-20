@@ -1,0 +1,2193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OLEVS Mechanical & Chronograph Masterpieces</title>
+    <!-- Google Fonts Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      /* Base & Typography Setup */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      body {
+        background-color: #0d0d0e;
+        color: #121212;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        min-height: 140vh; /* Taller viewport to allow a natural scroll gesture */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px 24px;
+        overflow-x: hidden;
+      }
+
+      /* Tablet/Browser Bezel Frame Container */
+      .tablet-container {
+        width: 100%;
+        max-width: 1240px;
+        background-color: #1a1a1a;
+        border-radius: 48px;
+        padding: 0px;
+        box-shadow: 
+          0 35px 80px -20px rgba(0, 0, 0, 0.85),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+        position: sticky;
+        top: 40px; /* Locked nicely in the upper portion of view during scroll interaction */
+        border: 14px solid #1a1a1a;
+        overflow: hidden;
+        z-index: 10;
+      }
+
+      /* Center Tablet Bezel Notch */
+      .tablet-notch {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 192px;
+        height: 28px;
+        background-color: #1a1a1a;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .tablet-camera {
+        width: 6px;
+        height: 6px;
+        background-color: #09090a;
+        border-radius: 50%;
+        box-shadow: 
+          inset 0 1px 2px rgba(0,0,0,0.8),
+          0 1px 1px rgba(255,255,255,0.1);
+      }
+
+      /* Screen inside Tablet Frame */
+      .tablet-frame {
+        background-color: #d8d8d8;
+        background: radial-gradient(circle at top left, #e2d5c3 0%, transparent 65%), 
+                    radial-gradient(circle at top right, #121212 0%, transparent 60%), 
+                    #d8d8d8;
+        border-radius: 30px;
+        width: 100%;
+        min-height: 720px;
+        height: 80vh;
+        max-height: 850px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 44px 54px;
+        transition: background 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                    background-color 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* --- NAVBAR STYLE --- */
+      .navbar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 40;
+      }
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .wordmark {
+        font-family: 'Outfit', sans-serif;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+        color: #121212;
+        user-select: none;
+      }
+
+      .hamburger-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: #121212;
+        padding: 4px;
+        opacity: 0.85;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .hamburger-btn:hover {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+
+      .nav-center {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+
+      .nav-center a {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(18, 18, 18, 0.7);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        padding: 4px 6px;
+        display: inline-block;
+      }
+
+      .nav-center a:hover {
+        color: #121212;
+      }
+
+      .nav-separator {
+        display: none; /* Hidden for editorial aesthetic spacing */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .lang-selector {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        color: #121212;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .lang-selector:hover {
+        opacity: 0.7;
+      }
+
+      .search-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: #121212;
+        padding: 4px;
+        opacity: 0.85;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .search-btn:hover {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+
+      /* Copy Link Share Button styling */
+      .share-link-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: #121212;
+        padding: 4px;
+        opacity: 0.85;
+        transition: opacity 0.2s ease, transform 0.2s ease, color 1s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+      }
+
+      .share-link-btn:hover {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+
+      .tooltip-toast {
+        position: absolute;
+        bottom: -36px;
+        left: 50%;
+        transform: translateX(-50%) translateY(5px);
+        background: rgba(18, 18, 20, 0.9);
+        color: #ffffff;
+        font-size: 10px;
+        padding: 6px 10px;
+        border-radius: 6px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .share-link-btn.copied .tooltip-toast {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* High-end Specifications Action Link Button */
+      .specs-link-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 20px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        color: #ffffff !important;
+        text-decoration: none;
+        padding: 8px 16px;
+        width: 100%;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        margin-top: 15px;
+        cursor: pointer;
+      }
+
+      .specs-link-btn:hover {
+        background: #ffffff;
+        color: #121212 !important;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
+      }
+
+      /* --- AUDIO TOGGLE BUTTON FOR AMBIENT MECHANICAL TICKING --- */
+      .audio-toggle-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #121212;
+        padding: 4px;
+        opacity: 0.85;
+        transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+        position: relative;
+      }
+
+      .audio-toggle-btn:hover {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+
+      .audio-toggle-btn.active {
+        color: #0b57d0; /* High-end active state accent */
+        opacity: 1;
+      }
+
+      /* Pulse dot representing the mechanical beat */
+      .audio-toggle-btn .pulse-indicator {
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        width: 4px;
+        height: 4px;
+        background-color: #0b57d0;
+        border-radius: 50%;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        opacity: 0;
+      }
+
+      .audio-toggle-btn.active .pulse-indicator {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+      }
+
+      /* Active sound wave animation with CSS keyframes */
+      .audio-toggle-btn.active .wave-line-1 {
+        animation: audioWavePulse 1000ms ease-in-out infinite;
+      }
+      .audio-toggle-btn.active .wave-line-2 {
+        animation: audioWavePulse 1000ms ease-in-out infinite 200ms;
+      }
+
+      @keyframes audioWavePulse {
+        0%, 100% {
+          opacity: 0.3;
+          stroke-width: 1.5px;
+        }
+        50% {
+          opacity: 1;
+          stroke-width: 2.2px;
+        }
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      /* --- CENTER STAGE & WATCH LAYOUT --- */
+      .center-stage {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        margin: auto 0;
+      }
+
+      /* Rotating mechanical gears absolute background */
+      .rotating-gears-background {
+        position: absolute;
+        width: 620px;
+        height: 620px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.12;
+        pointer-events: none;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        user-select: none;
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        border-radius: 50%;
+      }
+
+      .rotating-gears-bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        mix-blend-mode: screen;
+        animation: gearSpinSlow 75s linear infinite;
+        transform-origin: center center;
+        filter: grayscale(10%) contrast(110%);
+        transition: filter 1s ease, mix-blend-mode 1s ease;
+      }
+
+      @keyframes gearSpinSlow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Dynamically adjust contrast or colors depending on active theme */
+      .tablet-frame.theme-dark .rotating-gears-background {
+        opacity: 0.15;
+      }
+      
+      .tablet-frame.theme-dark .rotating-gears-bg-img {
+        mix-blend-mode: screen;
+        filter: grayscale(10%) contrast(110%);
+      }
+
+      .tablet-frame.theme-cream .rotating-gears-background {
+        opacity: 0.08;
+      }
+
+      .tablet-frame.theme-cream .rotating-gears-bg-img {
+        mix-blend-mode: multiply;
+        filter: invert(1) brightness(0.7) contrast(1.2) grayscale(100%);
+      }
+
+      @media (max-width: 768px) {
+        .rotating-gears-background {
+          width: 420px;
+          height: 420px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .rotating-gears-background {
+          width: 310px;
+          height: 310px;
+        }
+      }
+
+      /* Horizontal Lines Left & Right */
+      .divider-line-left {
+        position: absolute;
+        left: 0;
+        width: 96px;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.2);
+        top: 45%;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .divider-line-right {
+        position: absolute;
+        right: 0;
+        width: 96px;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.2);
+        top: 45%;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      /* Left (‹) and Right (›) Icons on lines */
+      .arrow-btn {
+        font-family: 'Outfit', sans-serif;
+        font-size: 24px;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.4);
+        user-select: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: color 0.2s ease, transform 0.2s ease;
+        line-height: 1;
+      }
+
+      .divider-line-left .arrow-btn {
+        margin-left: 16px;
+      }
+
+      .divider-line-right .arrow-btn {
+        margin-right: 16px;
+      }
+
+      .arrow-btn:hover {
+        color: #121212;
+        transform: scale(1.2);
+      }
+
+      /* Watch Stage Wrapper */
+      .watch-stage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 20;
+        width: 100%;
+        max-width: 960px;
+        height: 400px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: pan-y; /* Allow vertical pagewise scrolling, override horizontal for custom swipe */
+      }
+
+      .watch-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        opacity: 0; /* Starts hidden and animates on load */
+        overflow: hidden; /* Prevent any square edges or borders from protruding */
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: pan-y;
+
+        /* Core custom variables for fluid scaling & spatial layouts */
+        --x-offset: 175px;
+        --y-offset: 16px;
+        --center-w: 320px;
+        --center-h: 380px;
+        --side-w: 220px;
+        --side-h: 280px;
+      }
+
+      /* Left & Right Watches: fluid dimensions */
+      .watch-wrapper-left {
+        width: var(--side-w);
+        height: var(--side-h);
+        z-index: 5;
+        background: linear-gradient(to bottom, #2a3a5a, #1a1a1a);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+        transform: translate(calc(-50% - var(--x-offset)), calc(-50% + var(--y-offset))) scale(0.85) rotate(-14deg);
+      }
+
+      .watch-wrapper-right {
+        width: var(--side-w);
+        height: var(--side-h);
+        z-index: 5;
+        background: linear-gradient(to bottom, #4a3a2a, #1a1a1a);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+        transform: translate(calc(-50% + var(--x-offset)), calc(-50% + var(--y-offset))) scale(0.85) rotate(14deg);
+      }
+
+      /* Center Watch: fluid spotlight layout */
+      .watch-wrapper-center {
+        width: var(--center-w);
+        height: var(--center-h);
+        z-index: 15;
+        background: linear-gradient(to bottom right, #f0f0f0, #999999);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+
+      /* Transitions when the slider interaction mode is initialized */
+      .tablet-frame.slider-ready .watch-wrapper {
+        opacity: 0.9;
+        transition: transform 850ms cubic-bezier(0.16, 1, 0.3, 1), 
+                    width 850ms cubic-bezier(0.16, 1, 0.3, 1), 
+                    height 850ms cubic-bezier(0.16, 1, 0.3, 1), 
+                    opacity 850ms cubic-bezier(0.16, 1, 0.3, 1), 
+                    background 850ms cubic-bezier(0.16, 1, 0.3, 1), 
+                    box-shadow 850ms cubic-bezier(0.16, 1, 0.3, 1),
+                    z-index 850ms;
+      }
+
+      .tablet-frame.slider-ready .watch-wrapper-center {
+        opacity: 1;
+        z-index: 15;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+
+      .tablet-frame.slider-ready .watch-wrapper-left {
+        transform: translate(calc(-50% - var(--x-offset)), calc(-50% + var(--y-offset))) scale(0.85) rotate(-14deg);
+        z-index: 5;
+      }
+
+      .tablet-frame.slider-ready .watch-wrapper-right {
+        transform: translate(calc(-50% + var(--x-offset)), calc(-50% + var(--y-offset))) scale(0.85) rotate(14deg);
+        z-index: 5;
+      }
+
+      .watch-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 24px;
+        border-radius: inherit; /* Mask content to matching capsule curvature */
+        /* Master-level multiplier to fade white image backgrounds seamlessly */
+        mix-blend-mode: multiply; 
+        --parallax-x: calc(var(--mx, 0) * -22px);
+        --parallax-y: calc(var(--my, 0) * -22px);
+        transform: translate3d(var(--parallax-x), var(--parallax-y), 0);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease, opacity 0.4s ease;
+        cursor: pointer;
+      }
+
+      /* Scale on Hover */
+      .watch-img:hover {
+        transform: translate3d(var(--parallax-x), var(--parallax-y), 0) scale(1.06);
+      }
+
+      /* Dim and blur background watch image when specs are active */
+      .watch-wrapper.show-specs .watch-img {
+        opacity: 0.08;
+        filter: blur(6px);
+        transform: scale(0.92);
+        pointer-events: none;
+      }
+
+      /* Specs Toggle Buttons */
+      .specs-btn {
+        position: absolute;
+        bottom: 28px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        border-radius: 9999px;
+        padding: 6px 14px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        cursor: pointer;
+        z-index: 25;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: opacity 350ms cubic-bezier(0.16, 1, 0.3, 1), 
+                    transform 350ms cubic-bezier(0.16, 1, 0.3, 1), 
+                    background 200ms ease, 
+                    border-color 200ms ease, 
+                    color 200ms ease,
+                    box-shadow 200ms ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      .watch-wrapper-center .specs-btn {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.12);
+        color: #121212;
+      }
+
+      /* On center watch hover, elevate the button slightly */
+      .watch-wrapper-center:hover .specs-btn {
+        background: #121212;
+        color: #ffffff;
+        border-color: #121212;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transform: translateY(-2px);
+      }
+
+      .watch-wrapper.show-specs .specs-btn {
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+
+      /* Elegant Grid Specs Overlay */
+      .specs-overlay {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(135deg, rgba(16, 16, 18, 0.92) 0%, rgba(28, 28, 32, 0.86) 100%), rgba(20, 20, 22, 0.88);
+        background-blend-mode: overlay;
+        
+        /* Define progressive custom properties for dwelling blur */
+        --specs-blur: 24px;
+        --specs-saturate: 130%;
+        backdrop-filter: blur(var(--specs-blur)) saturate(var(--specs-saturate));
+        -webkit-backdrop-filter: blur(var(--specs-blur)) saturate(var(--specs-saturate));
+        
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1), 
+                    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+                    backdrop-filter 600ms cubic-bezier(0.16, 1, 0.3, 1),
+                    -webkit-backdrop-filter 600ms cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(25px) scaleY(0.95);
+        transform-origin: center top;
+        z-index: 30;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 36px 20px 24px 20px;
+        color: #ffffff;
+        box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.02);
+      }
+
+      .watch-wrapper.show-specs .specs-overlay {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0) scaleY(1);
+      }
+
+      /* Increase backdrop filter intensity dynamically utilizing CSS variables when parent is hovered */
+      .watch-wrapper.show-specs:hover .specs-overlay {
+        --specs-blur: 42px;
+        --specs-saturate: 150%;
+      }
+
+      .specs-header {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding-bottom: 10px;
+        margin-bottom: 18px;
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      .watch-wrapper.show-specs .specs-header {
+        animation: specsSpringIn 850ms cubic-bezier(0.34, 1.56, 0.64, 1) 120ms forwards;
+      }
+
+      .specs-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin: 0;
+      }
+
+      .specs-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 80%;
+        opacity: 0;
+        transform: translateY(36px);
+      }
+
+      .watch-wrapper.show-specs .specs-grid {
+        animation: specsSpringIn 950ms cubic-bezier(0.34, 1.56, 0.64, 1) 220ms forwards;
+      }
+
+      .spec-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      /* Add staggered delays to grid items when specs are shown */
+      .watch-wrapper.show-specs .spec-item:nth-child(1) {
+        animation: specItemEnter 400ms cubic-bezier(0.16, 1, 0.3, 1) 150ms forwards;
+      }
+      .watch-wrapper.show-specs .spec-item:nth-child(2) {
+        animation: specItemEnter 400ms cubic-bezier(0.16, 1, 0.3, 1) 220ms forwards;
+      }
+      .watch-wrapper.show-specs .spec-item:nth-child(3) {
+        animation: specItemEnter 400ms cubic-bezier(0.16, 1, 0.3, 1) 290ms forwards;
+      }
+      .watch-wrapper.show-specs .spec-item:nth-child(4) {
+        animation: specItemEnter 400ms cubic-bezier(0.16, 1, 0.3, 1) 360ms forwards;
+      }
+
+      @keyframes specItemEnter {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes specsSpringIn {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .spec-label {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.45);
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+
+      .spec-value {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: rgba(255, 255, 255, 0.95);
+        max-width: 170px;
+        line-height: 1.35;
+        text-align: center;
+      }
+
+      .specs-close-btn {
+        position: absolute;
+        top: 24px;
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 16px;
+        font-weight: 300;
+        cursor: pointer;
+        transition: color 150ms ease, transform 150ms ease, background 150ms ease;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+      }
+
+      .specs-close-btn:hover {
+        color: #ffffff;
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* --- PAGE LOAD CSS ANIMATION KEYFRAMES --- */
+      @keyframes watchEntranceLeft {
+        0% {
+          transform: translate(calc(-50% - var(--x-offset) - 60px), calc(-50% + var(--y-offset) + 60px)) scale(0.7) rotate(-30deg);
+          opacity: 0;
+        }
+        100% {
+          transform: translate(calc(-50% - var(--x-offset)), calc(-50% + var(--y-offset))) scale(0.85) rotate(-14deg);
+          opacity: 0.9;
+        }
+      }
+
+      @keyframes watchEntranceCenter {
+        0% {
+          transform: translate(-50%, calc(-50% + 80px)) scale(0.8) rotate(-15deg);
+          opacity: 0;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      @keyframes watchEntranceRight {
+        0% {
+          transform: translate(calc(-50% + var(--x-offset) + 60px), calc(-50% + var(--y-offset) + 60px)) scale(0.7) rotate(30deg);
+          opacity: 0;
+        }
+        100% {
+          transform: translate(calc(-50% + var(--x-offset)), calc(-50% + var(--y-offset))) scale(0.85) rotate(14deg);
+          opacity: 0.9;
+        }
+      }
+
+      /* Trigger when body/frame gets .loaded class and not ready yet */
+      .tablet-frame.loaded:not(.slider-ready) .watch-wrapper-left {
+        animation: watchEntranceLeft 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation-delay: 0ms;
+      }
+
+      .tablet-frame.loaded:not(.slider-ready) .watch-wrapper-center {
+        animation: watchEntranceCenter 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation-delay: 120ms;
+      }
+
+      .tablet-frame.loaded:not(.slider-ready) .watch-wrapper-right {
+        animation: watchEntranceRight 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation-delay: 240ms;
+      }
+
+      /* --- BOTTOM FOOTER STYLE --- */
+      .bottom-bar {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        z-index: 40;
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1), transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .bottom-bar.scrolled {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Bottom Left: Static Label number */
+      .bottom-left {
+        width: 25%;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .label-number {
+        font-family: monospace;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: -0.05em;
+        color: rgba(18, 18, 18, 0.5);
+      }
+
+      /* Bottom Center: Headline "GALAXY WATCH" + "NEW GENERATION" */
+      .bottom-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+        user-select: none;
+      }
+
+      .headline {
+        font-family: 'Outfit', sans-serif;
+        font-size: 48px;
+        font-weight: 900;
+        letter-spacing: -0.025em;
+        color: #121212;
+        line-height: 1.0;
+        margin: 0;
+      }
+
+      .subtext {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.4em;
+        color: rgba(18, 18, 18, 0.6);
+        margin-top: 6px;
+        text-transform: uppercase;
+      }
+
+      /* Bottom Right: Placeholder Tabs */
+      .bottom-right {
+        width: 25%;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .tabs {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .tab-item {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(18, 18, 18, 0.5);
+        cursor: pointer;
+        padding-bottom: 2px;
+        border-bottom: 1px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .tab-item:hover {
+        color: #121212;
+      }
+
+      .tab-item.active {
+        color: #121212;
+        border-bottom: 1.5px solid #121212;
+      }
+
+      .tab-separator {
+        display: none;
+      }
+
+      /* Vignette Overlay & Depth */
+      .vignette-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.1);
+        z-index: 35;
+      }
+
+      /* Decorative Side Half-Circles */
+      .side-half-circle {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: auto; /* Active for touch/click/hover */
+        cursor: pointer;
+        z-index: 36; /* Clickable overlay level */
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                    background 0.4s ease, 
+                    box-shadow 0.4s ease;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      .half-circle-left {
+        left: 0;
+        width: 48px;
+        height: 144px;
+        border-radius: 0 144px 144px 0;
+        background: rgba(24, 24, 26, 0.85); /* Light black */
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-left: none;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-50%) translateX(0px);
+      }
+
+      /* Hover or active touch state: slide closer towards center */
+      .half-circle-left:hover, 
+      .half-circle-left.active,
+      .tablet-frame.both-close .half-circle-left {
+        transform: translateY(-50%) translateX(32px);
+        background: rgba(14, 14, 16, 0.95);
+        box-shadow: 8px 0 28px rgba(0, 0, 0, 0.3);
+      }
+
+      .half-circle-right {
+        right: 0;
+        width: 48px;
+        height: 144px;
+        border-radius: 144px 0 0 144px;
+        background: rgba(235, 220, 197, 0.95); /* Cream */
+        border: 1px solid rgba(18, 18, 18, 0.08);
+        border-right: none;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+        transform: translateY(-50%) translateX(0px);
+      }
+
+      /* Hover or active touch state: slide closer towards center */
+      .half-circle-right:hover, 
+      .half-circle-right.active,
+      .tablet-frame.both-close .half-circle-right {
+        transform: translateY(-50%) translateX(-32px);
+        background: rgba(245, 235, 215, 1);
+        box-shadow: -8px 0 28px rgba(0, 0, 0, 0.15);
+      }
+
+      @media (max-width: 640px) {
+        .half-circle-left, .half-circle-right {
+          width: 32px;
+          height: 96px;
+        }
+        .half-circle-left {
+          border-radius: 0 96px 96px 0;
+        }
+        .half-circle-right {
+          border-radius: 96px 0 0 96px;
+        }
+        .half-circle-left:hover, 
+        .half-circle-left.active,
+        .tablet-frame.both-close .half-circle-left {
+          transform: translateY(-50%) translateX(16px);
+        }
+        .half-circle-right:hover, 
+        .half-circle-right.active,
+        .half-circle-right:hover, 
+        .half-circle-right.active,
+        .tablet-frame.both-close .half-circle-right {
+          transform: translateY(-50%) translateX(-16px);
+        }
+      }
+
+      /* Custom High-Frequency Vibration Keyframe Animations (Visual haptics feedback) */
+      @keyframes visualVibrateLeft {
+        0%, 100% { transform: translateY(-50%) translateX(var(--cur-tx, 0px)) scale(1) rotate(0deg); }
+        15% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) + 6px)) scale(1.08) rotate(3deg); }
+        30% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) - 3px)) scale(0.92) rotate(-3deg); }
+        45% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) + 4px)) scale(1.04) rotate(2deg); }
+        60% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) - 2px)) scale(0.96) rotate(-2deg); }
+        75% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) + 2px)) scale(1.02) rotate(1deg); }
+        90% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) - 1px)) scale(0.98) rotate(-1deg); }
+      }
+
+      @keyframes visualVibrateRight {
+        0%, 100% { transform: translateY(-50%) translateX(var(--cur-tx, 0px)) scale(1) rotate(0deg); }
+        15% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) - 6px)) scale(1.08) rotate(-3deg); }
+        30% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) + 3px)) scale(0.92) rotate(3deg); }
+        45% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) - 4px)) scale(1.04) rotate(-2deg); }
+        60% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) + 2px)) scale(0.96) rotate(2deg); }
+        75% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) - 2px)) scale(1.02) rotate(-1deg); }
+        90% { transform: translateY(-50%) translateX(calc(var(--cur-tx, 0px) + 1px)) scale(0.98) rotate(1deg); }
+      }
+
+      .half-circle-left.vibrating {
+        animation: visualVibrateLeft 480ms cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      }
+
+      .half-circle-right.vibrating {
+        animation: visualVibrateRight 480ms cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      }
+
+      /* --- DYNAMIC INTERACTIVE THEMES --- */
+          /* High-end transitions for all style-switched typography and interactive elements */
+      .wordmark, .hamburger-btn, .nav-center a, .lang-selector, .search-btn, .share-link-btn, 
+      .audio-toggle-btn, .headline, .subtext, .label-number, .tab-item, 
+      .arrow-btn, .divider-line-left, .divider-line-right, .specs-btn {
+        transition: color 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                    background-color 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                    border-color 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                    background 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                    box-shadow 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* 1. Theme Dark (Light Black / Charcoal Ambient) */
+      .tablet-frame.theme-dark {
+        background-color: #121214 !important;
+        background: radial-gradient(circle at top left, #24242e 0%, transparent 70%), 
+                    radial-gradient(circle at bottom right, #0a0a0d 0%, transparent 65%), 
+                    #121214 !important;
+      }
+
+      /* Dark Theme Typography & Elements Overrides */
+      .tablet-frame.theme-dark .wordmark,
+      .tablet-frame.theme-dark .hamburger-btn,
+      .tablet-frame.theme-dark .lang-selector,
+      .tablet-frame.theme-dark .search-btn,
+      .tablet-frame.theme-dark .share-link-btn,
+      .tablet-frame.theme-dark .audio-toggle-btn:not(.active),
+      .tablet-frame.theme-dark .headline,
+      .tablet-frame.theme-dark .arrow-btn:hover {
+        color: #f3f3f6 !important;
+      }
+      .tablet-frame.theme-dark .nav-center a {
+        color: rgba(243, 243, 246, 0.65) !important;
+      }
+      .tablet-frame.theme-dark .nav-center a:hover {
+        color: #ffffff !important;
+      }
+      .tablet-frame.theme-dark .subtext,
+      .tablet-frame.theme-dark .tab-item {
+        color: rgba(243, 243, 246, 0.5) !important;
+      }
+      .tablet-frame.theme-dark .tab-item:hover,
+      .tablet-frame.theme-dark .tab-item.active {
+        color: #ffffff !important;
+      }
+      .tablet-frame.theme-dark .tab-item.active {
+        border-bottom-color: #ffffff !important;
+      }
+      .tablet-frame.theme-dark .arrow-btn {
+        color: rgba(243, 243, 246, 0.35) !important;
+      }
+      .tablet-frame.theme-dark .divider-line-left,
+      .tablet-frame.theme-dark .divider-line-right {
+        background: rgba(243, 243, 246, 0.15) !important;
+      }
+      .tablet-frame.theme-dark .label-number {
+        color: rgba(243, 243, 246, 0.4) !important;
+      }
+      .tablet-frame.theme-dark .watch-wrapper-center .specs-btn {
+        background: rgba(255, 255, 255, 0.12) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+        color: #ffffff !important;
+      }
+
+      /* 2. Theme Cream (Warm Light / Editorial Sand) */
+      .tablet-frame.theme-cream {
+        background-color: #ebdcc5 !important;
+        background: radial-gradient(circle at top left, #faf5eb 0%, transparent 75%), 
+                    radial-gradient(circle at bottom right, #ebdcc5 0%, transparent 70%), 
+                    #ebdcc5 !important;
+      }
+
+      /* Cream Theme Typography & Elements Overrides (Explicit to allow seamless toggling) */
+      .tablet-frame.theme-cream .wordmark,
+      .tablet-frame.theme-cream .hamburger-btn,
+      .tablet-frame.theme-cream .lang-selector,
+      .tablet-frame.theme-cream .search-btn,
+      .tablet-frame.theme-cream .share-link-btn,
+      .tablet-frame.theme-cream .audio-toggle-btn:not(.active),
+      .tablet-frame.theme-cream .headline,
+      .tablet-frame.theme-cream .arrow-btn:hover {
+        color: #121212 !important;
+      }
+      .tablet-frame.theme-cream .nav-center a {
+        color: rgba(18, 18, 18, 0.7) !important;
+      }
+      .tablet-frame.theme-cream .nav-center a:hover {
+        color: #121212 !important;
+      }
+      .tablet-frame.theme-cream .subtext,
+      .tablet-frame.theme-cream .tab-item {
+        color: rgba(18, 18, 18, 0.5) !important;
+      }
+      .tablet-frame.theme-cream .tab-item:hover,
+      .tablet-frame.theme-cream .tab-item.active {
+        color: #121212 !important;
+      }
+      .tablet-frame.theme-cream .tab-item.active {
+        border-bottom-color: #121212 !important;
+      }
+      .tablet-frame.theme-cream .arrow-btn {
+        color: rgba(0, 0, 0, 0.4) !important;
+      }
+      .tablet-frame.theme-cream .divider-line-left,
+      .tablet-frame.theme-cream .divider-line-right {
+        background: rgba(0, 0, 0, 0.2) !important;
+      }
+      .tablet-frame.theme-cream .label-number {
+        color: rgba(18, 18, 18, 0.5) !important;
+      }
+      .tablet-frame.theme-cream .watch-wrapper-center .specs-btn {
+        background: rgba(0, 0, 0, 0.08) !important;
+        border-color: rgba(0, 0, 0, 0.12) !important;
+        color: #121212 !important;
+      }
+
+      /* --- RESPONSIVE MEDIA QUERIES --- */
+      @media (max-width: 1024px) {
+        .nav-center {
+          display: none; /* Hide wide navbar on small/medium displays for clean presentation */
+        }
+        
+        .divider-line-left, .divider-line-right {
+          width: 80px;
+        }
+        
+        .watch-wrapper {
+          --x-offset: 140px;
+          --y-offset: 14px;
+          --center-w: 260px;
+          --center-h: 310px;
+          --side-w: 180px;
+          --side-h: 230px;
+        }
+
+        .headline {
+          font-size: 38px;
+        }
+        
+        .subtext {
+          font-size: 9px;
+          letter-spacing: 0.35em;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 12px;
+          min-height: 100vh;
+        }
+        .tablet-container {
+          border-width: 6px;
+          border-radius: 28px;
+          top: 12px;
+          position: relative;
+        }
+        .tablet-frame {
+          border-radius: 22px;
+          padding: 28px 24px;
+          height: auto;
+          min-height: 600px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .tablet-frame {
+          padding: 24px 20px;
+          min-height: 520px;
+          border-radius: 20px;
+        }
+
+        .tablet-container {
+          border-radius: 30px;
+          border-width: 8px;
+        }
+
+        .tablet-notch {
+          width: 110px;
+          height: 14px;
+        }
+
+        .divider-line-left, .divider-line-right {
+          display: none; /* Simplify on ultra mobile devices */
+        }
+
+        .watch-stage {
+          height: 260px; /* Scaled down height for cleaner mobile spacing */
+        }
+
+        .watch-img {
+          padding: 14px; /* Proportional padding so images inside capsules look sleek and balanced */
+        }
+
+        .watch-wrapper {
+          --x-offset: 105px;
+          --y-offset: 12px;
+          --center-w: 195px;
+          --center-h: 235px;
+          --side-w: 130px;
+          --side-h: 165px;
+        }
+
+        @media (max-width: 420px) {
+          .watch-stage {
+            height: 210px; /* Even cleaner on ultra-small mobile displays */
+          }
+
+          .watch-img {
+            padding: 10px; /* Thin padding to keep face detailed on extremely narrow devices */
+          }
+
+          .watch-wrapper {
+            --x-offset: 82px;
+            --y-offset: 10px;
+            --center-w: 155px;
+            --center-h: 190px;
+            --side-w: 105px;
+            --side-h: 130px;
+          }
+        }
+
+        /* specs overlay fluid scaling down */
+        .specs-overlay {
+          padding: 24px 10px 14px 10px !important;
+        }
+
+        .specs-header {
+          margin-bottom: 8px !important;
+          padding-bottom: 6px !important;
+        }
+
+        .specs-title {
+          font-size: 8.5px !important;
+          letter-spacing: 0.1em !important;
+        }
+
+        .specs-grid {
+          gap: 6px !important;
+          width: 90% !important;
+        }
+
+        .spec-label {
+          font-size: 6.5px !important;
+          margin-bottom: 1px !important;
+        }
+
+        .spec-value {
+          font-size: 8px !important;
+          max-width: 110px !important;
+          line-height: 1.25 !important;
+        }
+
+        .specs-close-btn {
+          top: 10px !important;
+          right: 10px !important;
+          font-size: 14px !important;
+          width: 20px !important;
+          height: 20px !important;
+        }
+
+        .specs-link-btn {
+          margin-top: 6px !important;
+          padding: 4px 10px !important;
+          font-size: 8px !important;
+          border-radius: 12px !important;
+        }
+
+        .specs-btn {
+          bottom: 14px !important;
+          padding: 4px 10px !important;
+          font-size: 8px !important;
+        }
+
+        .headline {
+          font-size: 26px;
+          letter-spacing: 0.05em;
+        }
+
+        .subtext {
+          font-size: 8px;
+          letter-spacing: 0.25em;
+        }
+
+        .bottom-left, .bottom-right {
+          display: none; /* Prioritize headline on ultra small screens */
+        }
+
+        .bottom-center {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 0;
+          min-height: 100vh;
+        }
+        .tablet-container {
+          border-width: 0;
+          border-radius: 0;
+          top: 0;
+          box-shadow: none;
+          position: relative;
+        }
+        .tablet-frame {
+          border-radius: 0;
+          padding: 16px 12px 24px 12px;
+          height: 100vh;
+          min-height: 100%;
+          max-height: none;
+        }
+        .tablet-notch {
+          display: none;
+        }
+        .divider-line-left, .divider-line-right {
+          display: none;
+        }
+        .wordmark {
+          font-size: 16px;
+        }
+        .theme-select-wrapper {
+          gap: 6px;
+        }
+        .theme-bubble {
+          width: 14px;
+          height: 14px;
+        }
+        .lang-selector, .search-btn, .audio-toggle-btn, .share-link-btn {
+          padding: 6px;
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- realistic browser/frame container -->
+    <div class="tablet-container">
+      
+      <!-- top center notch -->
+      <div class="tablet-notch">
+        <div class="tablet-camera"></div>
+      </div>
+
+      <!-- tablet frame screen area -->
+      <div class="tablet-frame" id="tabletFrame">
+        
+        <!-- Vignette depth overlay -->
+        <div class="vignette-overlay"></div>
+
+        <!-- Decorative Side Half-Circles (Light Black and Cream) -->
+        <div class="side-half-circle half-circle-left"></div>
+        <div class="side-half-circle half-circle-right"></div>
+
+        <!-- Top Navbar -->
+        <header class="navbar">
+          <div class="nav-left">
+            <span class="wordmark">OLEVS</span>
+          </div>
+          
+          <nav class="nav-center">
+            <a href="#">TIME SET IN BRASS</a>
+            <span class="nav-separator">/</span>
+            <a href="#">FINE TIMEPIECES</a>
+            <span class="nav-separator">/</span>
+            <a href="#">DRESSED</a>
+            <span class="nav-separator">/</span>
+            <a href="#">EVERYDAY WEAR</a>
+          </nav>
+          
+          <div class="nav-right">
+            <span class="lang-selector">EN</span>
+          </div>
+        </header>
+
+        <!-- Center Stage -->
+        <div class="center-stage">
+          <!-- Ambient Rotating Mechanical Gears Background -->
+          <div class="rotating-gears-background" id="rotatingGearsBg">
+            <img src="/src/assets/images/mechanical_gears_1781954838424.jpg" alt="Rotating Mechanical Gears Movement" class="rotating-gears-bg-img">
+          </div>
+          
+          <!-- divider lines extending towards product cluster -->
+          <div class="divider-line-left">
+            <div class="arrow-btn" aria-label="Previous">‹</div>
+          </div>
+          <div class="divider-line-right">
+            <div class="arrow-btn" aria-label="Next">›</div>
+          </div>
+
+          <!-- Product watches cluster -->
+          <div class="watch-stage">
+            
+            <!-- Left Watch -->
+            <div class="watch-wrapper watch-wrapper-left">
+              <img src="watch-left.png" alt="Navy Blue Military Strap Watch" class="watch-img">
+              <button class="specs-btn" aria-label="View Specifications">Specs</button>
+              <div class="specs-overlay">
+                <button class="specs-close-btn" aria-label="Close Specifications">×</button>
+                <div class="specs-header">
+                  <h3 class="specs-title">Stealth Tactical</h3>
+                </div>
+                <div class="specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-label">Material</span>
+                    <strong class="spec-value">Titanium Grade 5</strong>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Glass</span>
+                    <strong class="spec-value">Sapphire Crystal 2.0</strong>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Health Tracker</span>
+                    <strong class="spec-value">Tactical GPS & HR</strong>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Power Reserve</span>
+                    <strong class="spec-value">Up to 100 Hours</strong>
+                  </div>
+                </div>
+                <a href="https://olevs.com/" target="_blank" rel="noopener noreferrer" class="specs-link-btn" aria-label="Explore Stealth Tactical Watch">
+                  <span>Explore Stealth Tactical</span>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 5px;">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Center Watch (Largest, Overlapping) -->
+            <div class="watch-wrapper watch-wrapper-center">
+              <img src="watch-center.png" alt="Silver Skeleton Dial Bracelet Watch" class="watch-img">
+              <button class="specs-btn" aria-label="View Specifications">Specs</button>
+              <div class="specs-overlay">
+                <button class="specs-close-btn" aria-label="Close Specifications">×</button>
+                <div class="specs-header">
+                  <h3 class="specs-title">New Generation</h3>
+                </div>
+                <div class="specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-label">Material</span>
+                    <strong class="spec-value">Armor Aluminum</strong>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Screen</span>
+                    <strong class="spec-value">AMOLED Always-On</strong>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Health Tracker</span>
+                    <strong class="spec-value">BioActive Sensor</strong>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Power Reserve</span>
+                    <strong class="spec-value">Up to 80 Hours</strong>
+                  </div>
+                </div>
+                <a href="https://olevs.com/" target="_blank" rel="noopener noreferrer" class="specs-link-btn" aria-label="Explore New Generation Watch">
+                  <span>Explore New Generation</span>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 5px;">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Watch -->
+            <div class="watch-wrapper watch-wrapper-right">
+              <img src="watch-right.png" alt="Bronze Gold Skeleton Leather Strap Watch" class="watch-img">
+              <button class="specs-btn" aria-label="View Specifications">Specs</button>
+              <div class="specs-overlay">
+                <button class="specs-close-btn" aria-label="Close Specifications">×</button>
+                <div class="specs-header">
+                  <h3 class="specs-title">Bronze Heritage</h3>
+                </div>
+                <div class="specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-label">Material</span>
+                    <strong class="spec-value">Brushed Satin Bronze</strong>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Strap</span>
+                    <strong class="spec-value">Hybrid Calfskin</strong>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Health Tracker</span>
+                    <strong class="spec-value">ECG & Sleep Vitality</strong>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Power Reserve</span>
+                    <strong class="spec-value">Up to 70 Hours</strong>
+                  </div>
+                </div>
+                <a href="https://olevs.com/" target="_blank" rel="noopener noreferrer" class="specs-link-btn" aria-label="Explore Bronze Heritage Watch">
+                  <span>Explore Bronze Heritage</span>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 5px;">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Bottom Footer Section -->
+        <footer class="bottom-bar">
+          
+          <!-- Bottom Left -->
+          <div class="bottom-left">
+          </div>
+
+          <!-- Bottom Center: Headline -->
+          <div class="bottom-center">
+            <h1 class="headline">OLEVS</h1>
+            <span class="subtext">NEW GENERATION</span>
+          </div>
+
+          <!-- Bottom Right -->
+          <div class="bottom-right">
+          </div>
+
+        </footer>
+
+      </div> <!-- /tablet-frame -->
+
+    </div> <!-- /tablet-container -->
+
+    <!-- Vanilla Javascript for page-load and interactive scroll transitions -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // Trigger the entrance animations using a pristine loaded class on the frame
+        const frame = document.getElementById('tabletFrame');
+        if (frame) {
+          // Subtle frame delay for beautiful cascade feeling
+          setTimeout(() => {
+            frame.classList.add('loaded');
+          }, 80);
+
+          // Activate manual slider interaction model once slide animations finish
+          setTimeout(() => {
+            frame.classList.add('slider-ready');
+          }, 1000);
+        }
+
+        const bottomBar = document.querySelector('.bottom-bar');
+        const subtextEl = document.querySelector('.bottom-center .subtext');
+        const labelEl = document.querySelector('.bottom-left .label-number');
+
+        let hasScrolled = false;
+
+        function setScrolledState(scrolled) {
+          if (scrolled === hasScrolled) return;
+          hasScrolled = scrolled;
+          if (scrolled) {
+            bottomBar.classList.add('scrolled');
+          } else {
+            bottomBar.classList.remove('scrolled');
+          }
+        }
+
+        // Auto-show bottom bar after 1.5s for seamless layout revelation across all device screens
+        setTimeout(() => {
+          setScrolledState(true);
+        }, 1500);
+
+        // 1. Detect natural viewport scrolling (if page scroll height is triggered)
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 30) {
+            setScrolledState(true);
+          } else if (window.scrollY <= 5) {
+            setScrolledState(false);
+          }
+        }, { passive: true });
+
+        // 2. Capture trackpad / wheel scroll interactions directly on the frame
+        if (frame) {
+          frame.addEventListener('wheel', (e) => {
+            if (e.deltaY > 10) {
+              setScrolledState(true);
+            } else if (e.deltaY < -10 && window.scrollY <= 5) {
+              setScrolledState(false);
+            }
+          }, { passive: true });
+
+          // 3. Capture swipe gestures on mobile displays
+          let touchStartY = 0;
+          frame.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+          }, { passive: true });
+
+          frame.addEventListener('touchmove', (e) => {
+            const touchCurrentY = e.touches[0].clientY;
+            const diffY = touchStartY - touchCurrentY;
+            if (diffY > 15) {
+              setScrolledState(true);
+            } else if (diffY < -15 && window.scrollY <= 5) {
+              setScrolledState(false);
+            }
+          }, { passive: true });
+
+          // 4. Parallax effect with mousemove tracking
+          frame.addEventListener('mousemove', (e) => {
+            const rect = frame.getBoundingClientRect();
+            // Map coordinates relative to center [-0.5, 0.5]
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            
+            frame.style.setProperty('--mx', x);
+            frame.style.setProperty('--my', y);
+          }, { passive: true });
+
+          // Restore perfectly to center when mouse leaves the interactive container area
+          frame.addEventListener('mouseleave', () => {
+            frame.style.setProperty('--mx', '0');
+            frame.style.setProperty('--my', '0');
+          }, { passive: true });
+        }
+
+        // --- DECORATIVE HALF-CIRCLES INTERACTION ---
+        const leftHalfCircle = document.querySelector('.half-circle-left');
+        const rightHalfCircle = document.querySelector('.half-circle-right');
+
+        if (leftHalfCircle && rightHalfCircle) {
+          // Dynamic vibration utility for standard tactile visual/device haptics feedback
+          const vibrateElement = (element, direction) => {
+            if (navigator && typeof navigator.vibrate === 'function') {
+              try {
+                navigator.vibrate([20, 30, 20]);
+              } catch (err) {
+                // Ignore safe sandboxed context restrictions
+              }
+            }
+
+            // Set translating state CSS variables contextually
+            let currentTx = '0px';
+            const isClose = frame && frame.classList.contains('both-close');
+            if (direction === 'left') {
+              currentTx = isClose ? '32px' : '0px';
+              if (window.innerWidth <= 640) currentTx = isClose ? '16px' : '0px';
+            } else {
+              currentTx = isClose ? '-32px' : '0px';
+              if (window.innerWidth <= 640) currentTx = isClose ? '-16px' : '0px';
+            }
+            element.style.setProperty('--cur-tx', currentTx);
+
+            element.classList.remove('vibrating');
+            void element.offsetWidth; // Force CSS animation reflow
+            element.classList.add('vibrating');
+          };
+
+          // Toggle "both close" and switch the slide + matching theme when clicking
+          leftHalfCircle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (frame) {
+              frame.classList.toggle('both-close');
+              // Pull Stealth Tactical (index 0) to center
+              const targetPos = currentPositions[0];
+              if (targetPos === 0) {
+                currentPositions = currentPositions.map(pos => (pos + 1) % 3);
+              } else if (targetPos === 2) {
+                currentPositions = currentPositions.map(pos => (pos + 2) % 3);
+              }
+              updateSliderPositions();
+              resetAutoRotation();
+            }
+            vibrateElement(leftHalfCircle, 'left');
+          });
+
+          rightHalfCircle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (frame) {
+              frame.classList.toggle('both-close');
+              // Pull Bronze Heritage (index 2) to center
+              const targetPos = currentPositions[2];
+              if (targetPos === 0) {
+                currentPositions = currentPositions.map(pos => (pos + 1) % 3);
+              } else if (targetPos === 2) {
+                currentPositions = currentPositions.map(pos => (pos + 2) % 3);
+              }
+              updateSliderPositions();
+              resetAutoRotation();
+            }
+            vibrateElement(rightHalfCircle, 'right');
+          });
+
+          // Also allow direct interactive touch active states and immediate slide triggers
+          leftHalfCircle.addEventListener('touchstart', (e) => {
+            leftHalfCircle.classList.add('active');
+            if (frame) {
+              const targetPos = currentPositions[0];
+              if (targetPos === 0) {
+                currentPositions = currentPositions.map(pos => (pos + 1) % 3);
+              } else if (targetPos === 2) {
+                currentPositions = currentPositions.map(pos => (pos + 2) % 3);
+              }
+              updateSliderPositions();
+              resetAutoRotation();
+            }
+            vibrateElement(leftHalfCircle, 'left');
+          }, { passive: true });
+
+          leftHalfCircle.addEventListener('touchend', (e) => {
+            leftHalfCircle.classList.remove('active');
+          }, { passive: true });
+
+          rightHalfCircle.addEventListener('touchstart', (e) => {
+            rightHalfCircle.classList.add('active');
+            if (frame) {
+              const targetPos = currentPositions[2];
+              if (targetPos === 0) {
+                currentPositions = currentPositions.map(pos => (pos + 1) % 3);
+              } else if (targetPos === 2) {
+                currentPositions = currentPositions.map(pos => (pos + 2) % 3);
+              }
+              updateSliderPositions();
+              resetAutoRotation();
+            }
+            vibrateElement(rightHalfCircle, 'right');
+          }, { passive: true });
+
+          rightHalfCircle.addEventListener('touchend', (e) => {
+            rightHalfCircle.classList.remove('active');
+          }, { passive: true });
+        }
+
+        // --- INTERACTIVE PRODUCTS SLIDER LOGIC ---
+        const prevBtn = document.querySelector('.divider-line-left .arrow-btn');
+        const nextBtn = document.querySelector('.divider-line-right .arrow-btn');
+        const watchWrappers = Array.from(document.querySelectorAll('.watch-stage .watch-wrapper'));
+
+        // Align status info with each distinct watch configuration
+        const watchDetails = [
+          { label: '024', subtext: 'STEALTH TACTICAL' },
+          { label: '036', subtext: 'NEW GENERATION' },
+          { label: '048', subtext: 'BRONZE HERITAGE' }
+        ];
+
+        // Pos index values: 0 = left, 1 = center, 2 = right
+        let currentPositions = [0, 1, 2];
+        const positionClasses = ['watch-wrapper-left', 'watch-wrapper-center', 'watch-wrapper-right'];
+
+        // --- AUTO-ROTATING CAROUSEL SYSTEM STATE ---
+        const watchStage = document.querySelector('.watch-stage');
+        let autoRotateInterval = null;
+        const autoRotateDelay = 8000; // 8 seconds
+        let isHovered = false;
+        let isSpecsOpen = false;
+
+        function startAutoRotation() {
+          if (isSpecsOpen || isHovered || autoRotateInterval) return;
+          autoRotateInterval = setInterval(() => {
+            currentPositions = currentPositions.map(pos => (pos + 2) % 3);
+            updateSliderPositions();
+          }, autoRotateDelay);
+        }
+
+        function stopAutoRotation() {
+          if (autoRotateInterval) {
+            clearInterval(autoRotateInterval);
+            autoRotateInterval = null;
+          }
+        }
+
+        function resetAutoRotation() {
+          stopAutoRotation();
+          startAutoRotation();
+        }
+
+        function updateSliderPositions() {
+          let hadSpecsOpen = false;
+          watchWrappers.forEach((wrapper, index) => {
+            const pos = currentPositions[index];
+            if (wrapper.classList.contains('show-specs')) {
+              hadSpecsOpen = true;
+            }
+            wrapper.classList.remove('watch-wrapper-left', 'watch-wrapper-center', 'watch-wrapper-right', 'show-specs');
+            wrapper.classList.add(positionClasses[pos]);
+          });
+
+          if (hadSpecsOpen) {
+            isSpecsOpen = false;
+            if (!isHovered) {
+              startAutoRotation();
+            }
+          }
+
+          // Identify which watch index is now residing in the center position (position value is 1)
+          const centerIndex = currentPositions.indexOf(1);
+          updateCenterWatchDetails(centerIndex);
+        }
+
+        function updateCenterWatchDetails(centerIndex) {
+          const detail = watchDetails[centerIndex];
+          
+          if (frame) {
+            if (centerIndex === 0) {
+              frame.classList.add('theme-dark');
+              frame.classList.remove('theme-cream');
+            } else if (centerIndex === 2) {
+              frame.classList.add('theme-cream');
+              frame.classList.remove('theme-dark');
+            } else {
+              frame.classList.remove('theme-dark', 'theme-cream');
+            }
+          }
+
+          if (subtextEl) {
+            // High-end text fade cross-over
+            subtextEl.style.transition = 'opacity 300ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms cubic-bezier(0.16, 1, 0.3, 1)';
+            subtextEl.style.opacity = '0';
+            subtextEl.style.transform = 'translateY(4px)';
+            
+            setTimeout(() => {
+              subtextEl.textContent = detail.subtext;
+              subtextEl.style.opacity = '0.6';
+              subtextEl.style.transform = 'translateY(0)';
+            }, 300);
+          }
+
+          if (labelEl) {
+            labelEl.style.transition = 'opacity 300ms cubic-bezier(0.16, 1, 0.3, 1)';
+            labelEl.style.opacity = '0';
+            
+            setTimeout(() => {
+              labelEl.textContent = detail.label;
+              labelEl.style.opacity = '0.5';
+            }, 300);
+          }
+        }
+
+        // Add event listeners for specifications overlays
+        watchWrappers.forEach((wrapper) => {
+          const specsBtn = wrapper.querySelector('.specs-btn');
+          const closeBtn = wrapper.querySelector('.specs-close-btn');
+
+          if (specsBtn) {
+            specsBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              
+              // Only trigger specs overlays if the target wrapper is in the center-stage spotlight
+              const isCenter = wrapper.classList.contains('watch-wrapper-center');
+              if (isCenter) {
+                // Ensure other sibling watch specifications are closed first
+                watchWrappers.forEach(w => {
+                  if (w !== wrapper) w.classList.remove('show-specs');
+                });
+                wrapper.classList.add('show-specs');
+                isSpecsOpen = true;
+                stopAutoRotation();
+              }
+            });
+          }
+
+          if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              wrapper.classList.remove('show-specs');
+              isSpecsOpen = false;
+              if (!isHovered) {
+                startAutoRotation();
+              }
+            });
+          }
+        });
+
+        // Shift carousel directionally using optimized modulus
+        if (prevBtn) {
+          prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentPositions = currentPositions.map(pos => (pos + 1) % 3);
+            updateSliderPositions();
+            resetAutoRotation();
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentPositions = currentPositions.map(pos => (pos + 2) % 3);
+            updateSliderPositions();
+            resetAutoRotation();
+          });
+        }
+
+        // Enable responsive viewport clicking directly on side-carousels to focus center or click of center watch to navigate
+        watchWrappers.forEach((wrapper, index) => {
+          wrapper.addEventListener('click', (e) => {
+            const pos = currentPositions[index];
+            if (pos === 0) {
+              // Bring left watch into center focus (equivalent to Prev action)
+              currentPositions = currentPositions.map(p => (p + 1) % 3);
+              updateSliderPositions();
+              resetAutoRotation();
+            } else if (pos === 2) {
+              // Bring right watch into center focus (equivalent to Next action)
+              currentPositions = currentPositions.map(p => (p + 2) % 3);
+              updateSliderPositions();
+              resetAutoRotation();
+            } else if (pos === 1) {
+              // If central watch, trigger dynamic official product link click (unless clicking on button or specs details)
+              if (!e.target.closest('.specs-btn') && !e.target.closest('.specs-overlay')) {
+                window.open('https://olevs.com/', '_blank');
+              }
+            }
+          });
+        });
+
+        // Setup copy share app URL link functionality
+        const shareBtn = document.getElementById('shareLinkBtn');
+        if (shareBtn) {
+          shareBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const currentUrl = window.location.href;
+            navigator.clipboard.writeText(currentUrl).then(() => {
+              shareBtn.classList.add('copied');
+              setTimeout(() => {
+                shareBtn.classList.remove('copied');
+              }, 2000);
+            }).catch(err => {
+              console.error('Failed to copy link:', err);
+            });
+          });
+        }
+
+        // Set up watch area hover tracking to pause/resume auto-rotation
+        if (watchStage) {
+          watchStage.addEventListener('mouseenter', () => {
+            isHovered = true;
+            stopAutoRotation();
+          });
+
+          watchStage.addEventListener('mouseleave', () => {
+            isHovered = false;
+            startAutoRotation();
+          });
+
+          // Mobile-friendly touch swipe gestures on the watches carousel
+          let touchStartX = 0;
+          let touchStartY = 0;
+          let touchEndX = 0;
+          let touchEndY = 0;
+          let isHorizontalSwipe = false;
+
+          watchStage.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            touchEndX = touchStartX;
+            touchEndY = touchStartY;
+            isHorizontalSwipe = false;
+          }, { passive: true });
+
+          watchStage.addEventListener('touchmove', (e) => {
+            touchEndX = e.touches[0].clientX;
+            touchEndY = e.touches[0].clientY;
+            
+            const diffX = touchStartX - touchEndX;
+            const diffY = touchStartY - touchEndY;
+            
+            // If the swipe is dominantly horizontal, prevent standard vertical scroll
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) {
+              isHorizontalSwipe = true;
+              if (e.cancelable) {
+                e.preventDefault();
+              }
+            }
+          }, { passive: false }); // MUST be passive: false to allow preventDefault of scroll
+
+          watchStage.addEventListener('touchend', (e) => {
+            if (isHorizontalSwipe) {
+              const diffX = touchStartX - touchEndX;
+              // Require standard swipes to exceed a threshold (e.g., 30px)
+              if (Math.abs(diffX) > 30) {
+                if (diffX > 0) {
+                  // Swiped Left -> Show next watch (Next/Right rotation)
+                  currentPositions = currentPositions.map(pos => (pos + 2) % 3);
+                } else {
+                  // Swiped Right -> Show previous watch (Prev/Left rotation)
+                  currentPositions = currentPositions.map(pos => (pos + 1) % 3);
+                }
+                updateSliderPositions();
+                resetAutoRotation();
+              }
+            }
+          }, { passive: true });
+        }
+
+        // Start auto rotation on init after entrance animations settle
+        setTimeout(() => {
+          startAutoRotation();
+        }, 1500);
+
+        // --- AMBIENT WATCH TICKING AUDIO SYSTEM ---
+        const audioToggleBtn = document.getElementById('audioToggleBtn');
+        const audioOnIcon = audioToggleBtn ? audioToggleBtn.querySelector('.audio-on-icon') : null;
+        const audioOffIcon = audioToggleBtn ? audioToggleBtn.querySelector('.audio-off-icon') : null;
+
+        let audioCtxModel = null;
+        let ambientTickInterval = null;
+        let isTickingActive = false;
+
+        function createWatchTick(time, frequency, decay, volume) {
+          if (!audioCtxModel) return;
+          try {
+            const osc = audioCtxModel.createOscillator();
+            const gainNode = audioCtxModel.createGain();
+            const filter = audioCtxModel.createBiquadFilter();
+
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(frequency, time);
+
+            filter.type = 'bandpass';
+            filter.frequency.setValueAtTime(frequency, time);
+            filter.Q.setValueAtTime(6, time); // mechanical resonance simulation
+
+            gainNode.gain.setValueAtTime(volume, time);
+            // Decay curve down to silent
+            gainNode.gain.exponentialRampToValueAtTime(0.00001, time + decay);
+
+            osc.connect(filter);
+            filter.connect(gainNode);
+            gainNode.connect(audioCtxModel.destination);
+
+            osc.start(time);
+            osc.stop(time + decay + 0.05);
+          } catch (err) {
+            console.error("Failed to play mechanical tick synthesizer:", err);
+          }
+        }
+
+        function playMechanicalWatchTick() {
+          if (!audioCtxModel) return;
+          if (audioCtxModel.state === 'suspended') {
+            audioCtxModel.resume();
+          }
+
+          const currentTime = audioCtxModel.currentTime;
+          
+          // Realistic high-end escapement pallet fork double strike (mechanics of "tic-tac")
+          // Click 1: Primary escapement release
+          createWatchTick(currentTime, 4500, 0.008, 0.06);
+          // Click 2: Locking click offset by 24ms
+          createWatchTick(currentTime + 0.024, 3300, 0.005, 0.03);
+        }
+
+        if (audioToggleBtn) {
+          // Default start option: begin muted/inactive to respect autoplay guidelines
+          audioToggleBtn.classList.remove('active');
+          if (audioOnIcon) audioOnIcon.classList.add('hidden');
+          if (audioOffIcon) audioOffIcon.classList.remove('hidden');
+
+          audioToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            // Lazy construction inside interactive user click flow
+            if (!audioCtxModel) {
+              audioCtxModel = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            isTickingActive = !isTickingActive;
+
+            if (isTickingActive) {
+              audioToggleBtn.classList.add('active');
+              if (audioOnIcon) audioOnIcon.classList.remove('hidden');
+              if (audioOffIcon) audioOffIcon.classList.add('hidden');
+
+              // Immediate mechanical feedback
+              playMechanicalWatchTick();
+
+              // Loop a precise 1Hz mechanical pacing heartbeat
+              ambientTickInterval = setInterval(() => {
+                playMechanicalWatchTick();
+              }, 1000);
+            } else {
+              audioToggleBtn.classList.remove('active');
+              if (audioOnIcon) audioOnIcon.classList.add('hidden');
+              if (audioOffIcon) audioOffIcon.classList.remove('hidden');
+
+              if (ambientTickInterval) {
+                clearInterval(ambientTickInterval);
+                ambientTickInterval = null;
+              }
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
